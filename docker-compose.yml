@@ -13,6 +13,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ./BD/data:/var/lib/postgresql/data/pgdata:Z
+      - ./init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
     networks:
       - net
   
