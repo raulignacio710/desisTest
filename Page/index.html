@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Formulario Desis</title>
+</head>
+<body>
+    <div class="container">
+        <form class="my-5" id="form_votacion">
+            <h3 class="mb-5">Formulario de votacion</h3>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre y Apellido</label>
+                <input name="name" type="name" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="alias" class="form-label">Alias</label>
+                <input name="alias" type="alias" class="form-control" id="alias" pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}" required>
+            </div>
+            <div class="mb-3">
+                <label for="rut" class="form-label">RUT</label>
+                <input name="rut" type="rut" class="form-control" id="rut" pattern="[0-9]{8,9}" placeholder="ingrese su rut sin puntos ni guion" title="ingrese su rut sin puntos ni guion" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input name="email" type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="region" class="form-label">Region</label>
+                <select id ="region" name="region" class="form-select" required>
+                    <option selected></option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="comuna" class="form-label">Comuna</label>
+                <select disabled id="comuna" name="comuna" class="form-select" required>
+                    <option selected></option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="candidato" class="form-label">Candidato</label>
+                <select id="candidato" name="candidato" class="form-select" required>
+                    <option selected></option>
+                </select>
+            </div>
+            <label for="region" class="form-label">Como se entero de Nosotros</label>
+            <div class="check-container row ps-4">
+                <div class="mb-3 form-check col">
+                    <input type="checkbox" class="form-check-input" name="divulgacion[]" value="web" id="divulgacion">
+                    <label class="form-check-label" for="web">Web</label>
+                </div>
+                <div class="mb-3 form-check col">
+                    <input type="checkbox" class="form-check-input" name="divulgacion[]" value="tv" id="divulgacion">
+                    <label class="form-check-label" for="tv">TV</label>
+                </div>
+                <div class="mb-3 form-check col">
+                    <input type="checkbox" class="form-check-input" name="divulgacion[]" value="rs" id="divulgacion">
+                    <label class="form-check-label" for="rs">Redes Sociales</label>
+                </div>
+                <div class="mb-3 form-check col">
+                    <input type="checkbox" class="form-check-input" name="divulgacion[]" value="frnd" id="divulgacion">
+                    <label class="form-check-label" for="frnd">Amigo</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Votar</button>
+        </form>
+    </div>
+    <footer><script src="app.js"></script></footer>
+</body>
+</html>

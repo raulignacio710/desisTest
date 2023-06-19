@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: toor
+      POSTGRES_DB: desisBD
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./BD/data:/var/lib/postgresql/data/pgdata:Z
+    networks:
+      - net
+  
+  apache:
+    image: jjuanrivvera99/ubuntu-apache-php-postgresql
+    ports:
+      - 8080:80
+    volumes:
+      - ./Page:/var/www/public:Z
+    networks:
+      - net
+
+networks:
+  net:
